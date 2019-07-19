@@ -11,6 +11,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
 :root {
   --blue: #2C3E50;
@@ -69,7 +70,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #eceff1;
 }
 
 [tabindex="-1"]:focus {
@@ -557,8 +558,8 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -601,6 +602,7 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 30px;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -4337,7 +4339,7 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .nav-tabs .nav-item {
@@ -4348,6 +4350,8 @@ input[type="button"].btn-block {
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+  /* border-bottom: 1px solid #ecf0f1; */
+  /* background-color: lightgray; */
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
@@ -4356,15 +4360,19 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.disabled {
   color: #95a5a6;
+  /* color: lightslategrey; */
   background-color: transparent;
   border-color: transparent;
 }
 
+
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #7b8a8b;
-  background-color: #fff;
-  border-color: #dee2e6 #dee2e6 #fff;
+  color: #7b8a8b; /* color of text */
+  /* active tab */
+  background-color: #ecf0f1;
+  border-color: #dee2e6 #dee2e6 #ecf0f1 #dee2e6;
+  /* border-color: #dee2e6 #dee2e6 #fff; */
 }
 
 .nav-tabs .dropdown-menu {
@@ -4405,6 +4413,7 @@ input[type="button"].btn-block {
 
 .tab-content > .active {
   display: block;
+  padding-left: 15px;
 }
 
 .navbar {
