@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Obesity Data</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/d3Style.css"> 
+
+    <!-- TK Aglet Slab font family -->
+    <link rel="stylesheet" href="https://use.typekit.net/fwf7daa.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+  </head>
+
+
+  <body>
+      <div>
+          <h1>Data study of obesity in America</h1>
+          <p>Some information. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </div>
+
+      <div id="map"></div> 
+      
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-8">
+            
+          </div>
+
+          <div class="col-lg-4">
+            <div>
+              <h3 id="descrip_header"></h3>
+              <h4 id="description"></h4>
+          </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Row of buttons and menus -->
+        <div class="row">
+          <!-- Dropdown menu -->
+          <div class="col-lg-4">
+              <button id="main" type="submit" class="btn btn-default">Main</button>
+          </div>
+
+          <div class="col-lg-4">
+            <form name="nutritiondropdownList">
+              <button id="nutrition" type="submit" class="btn btn-default">Nutrition</button>
+              <br>
+              Select:
+              <select id="nutr" onchange="optionChanged(this.value)">
+                <option value="soda">Soda</option>
+                <option value="fruit">Eats No Fruits</option>
+                <option value="vegetable">Eats No Vegetables</option>
+              </select>
+            </form>
+          </div>
+    
+          <div class="col-lg-4">
+            <button id="activity" type="submit" class="btn btn-default">Inactivity</button>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div id="chart1"></div>
+        </div>
+      </div>
+      
+
+      <!-- Data files needed for Plotly Chart -->
+      <script src="../static/data/data_Male_Nutrition.js"></script>
+      <script src="../static/data/data_Female_Nutrition.js"></script>
+      <script src="../static/data/data_AgeGender.js"></script>
+      <script src="../static/data/data_Health.js"></script>
+    
+      <!-- Charts in own .js files -->
+      <script src="../static/js/Chart_Nutrition/Soda_Intake.js"></script>
+      <script src="../static/js/Chart_Nutrition/Fruit_Intake.js"></script>
+      <script src="../static/js/Chart_Nutrition/Vegetable_Intake.js"></script>
+      <script src="../static/js/Chart_Health/Inactivity_Interactive.js"></script>
+      <script src="../static/js/Chart_AgeGender/GenderAge.js"></script>
+    
+      <script type="text/javascript" src="../static/js/app.js"></script>
+
+       <!-- Link to Obesity Map Js-->
+       <script type="text/javascript" src="../static/js/Map_Obesity/config.js"></script>
+       <script type="text/javascript" src="../static/js/Map_Obesity/geojson_obesity.js"></script>
+       <script type="text/javascript" src="../static/js/Map_Obesity/logic_map_obesity.js"></script>
+    </body>
+
+<footer>
+  <div class="wrapper">
+    <p style="font-size:.75em; color:#808080; text-align: center">Design & Developed by Bic Vu, 2019. Content sourced from NASA, JPL, space-facts.com, and USGS</p>
+  </div>
+</footer>
+
+</html>
