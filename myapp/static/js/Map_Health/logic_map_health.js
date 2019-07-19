@@ -1,3 +1,9 @@
+// working with addMap() function outside of container
+var $div = d3
+  .select("body")
+  .append("div")
+  .attr("id", "map")
+
 // Indigo gradient
 function getColor(d) {
     return d > 38 ? '#283593' :
@@ -10,7 +16,7 @@ function getColor(d) {
                       '#e8eaf6';
 }
 
-// Set initial map view
+function addMap() {
 var map = L.map("map", {
   center: [37.8, -96],
   zoom: 4
@@ -18,7 +24,7 @@ var map = L.map("map", {
 
 // Adding tile layer
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Data from CDC. Bic Vu  ",
+  // attribution: "Data from CDC",
   maxZoom: 18,
   id: "mapbox.light",
   accessToken: API_KEY
@@ -82,7 +88,7 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>US Adult Obesity</h4>' +  (props ?
+    this._div.innerHTML = '<h4>Adult Diabetes</h4>' +  (props ?
         '<b>' + props.name + '</b><br />' + props.density + '% obesity population'
         : 'Hover over a state');
 };
@@ -114,9 +120,12 @@ legend.addTo(map);
 // Add layer to map
 var geojson;
 
-geojson = L.geoJson(fuData, {
+geojson = L.geoJson(diabetesData, {
   style: style,
   onEachFeature: onEachFeature
 }).addTo(map);
 
-// geojson = L.geoJson(fuData, {style: style}, {highlightFeature: highlightFeature}, {resetHighlight: resetHighlight}).addTo(map);
+};
+
+addMap()
+
