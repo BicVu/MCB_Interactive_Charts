@@ -1,4 +1,4 @@
-from myapp.app import db
+from obesity-data.app import db
 
 # db.drop_all()
 db.create_all()

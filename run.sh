@@ -1,0 +1,1 @@
+FLASK_APP=obesity-data/app.py flask run
