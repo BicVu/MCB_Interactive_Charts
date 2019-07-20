@@ -1,4 +1,4 @@
-var data_Health = [
+var data_Inactivity_Disease = [
   {
     "State": "Alabama",
     "State_Abbrev": "AL",

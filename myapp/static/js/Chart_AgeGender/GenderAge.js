@@ -37,7 +37,7 @@ function GenderAgeChart() {
         if (width <= 530) {
             circRadius = 5;
         } else {
-            circRadius = 10;
+            circRadius = 20;
         }
     }
     crGet();
@@ -393,7 +393,7 @@ function GenderAgeChart() {
                     xScale.domain([xMin, xMax]);
 
                     // Now use a transition when we update the xAxis.
-                    svg.select(".xAxis").transition().duration(300).call(xAxis);
+                    svg.select(".xAxis").transition().duration(1800).call(xAxis);
 
                     // With the axis changed, let's update the location of the state circles.
                     d3.selectAll("circle").each(function () {
@@ -406,7 +406,7 @@ function GenderAgeChart() {
                             .attr("cx", function (d) {
                                 return xScale(d[curX]);
                             })
-                            .duration(300);
+                            .duration(1800);
                     });
 
                     // We need change the location of the state texts, too.
@@ -418,7 +418,7 @@ function GenderAgeChart() {
                             .attr("dx", function (d) {
                                 return xScale(d[curX]);
                             })
-                            .duration(300);
+                            .duration(1800);
                     });
 
                     // Finally, change the classes of the last active label and the clicked label.
@@ -435,7 +435,7 @@ function GenderAgeChart() {
                     yScale.domain([yMin, yMax]);
 
                     // Update Y Axis
-                    svg.select(".yAxis").transition().duration(300).call(yAxis);
+                    svg.select(".yAxis").transition().duration(1800).call(yAxis);
 
                     // With the axis changed, let's update the location of the state circles.
                     d3.selectAll("circle").each(function () {
@@ -445,7 +445,7 @@ function GenderAgeChart() {
                         d3
                             .select(this)
                             .transition()
-                            .duration(300)
+                            .duration(1800)
                             .attr("cy", function (d) {
                                 return yScale(d[curY]);
                             })
@@ -462,7 +462,7 @@ function GenderAgeChart() {
                             .attr("dy", function (d) {
                                 return yScale(d[curY]) + circRadius / 3;
                             })
-                            .duration(300);
+                            .duration(1800);
                     });
 
                     // Finally, change the classes of the last active label and the clicked label.

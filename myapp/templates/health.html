@@ -2,152 +2,104 @@
 <!-- YOU ARE HERE: static/templates/health.html -->
 
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="https://use.typekit.net/fwf7daa.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/d3style.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
-    <!-- Leaflet CSS & JS for Map-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://use.typekit.net/fwf7daa.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/d3style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+  <!-- Leaflet CSS & JS for Map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
 
-    <!-- D3 for Map-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <!-- D3 for Map-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
-    <!-- d3 JavaScript -->
-    <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://d3js.org/d3.v4.js"></script> -->
-
-    <!-- MomentJS -->
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script> -->
-  <!-- D3 JavaScript -->
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script> -->
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-
-    <title>Obesity Data Visualization</title>
-  </head>
+  <title>Obesity Data Visualization</title>
+</head>
 
 
 <body>
   <!-- Nav start -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="index.html">Obesity Data Analysis</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-      </button>
+    <a class="navbar-brand" href="index.html">Obesity Data Analysis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+    </button>
   </nav>
   <!-- Nav end -->
 
   <!-- Tab start -->
   <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a id="main" class="nav-link" data-toggle="tab" href="index.html">Main</a>
-      </li>
-      <!-- HEALTH TAB IS ACTIVE -->
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="health.html">Health</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="nutrition.html">Nutrition</a>
-        </li>
-      <!-- Dropdown tab -->
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </li> -->
-    </ul>
+    <li class="nav-item">
+      <a id="main" class="nav-link" data-toggle="tab" href="index.html">Main</a>
+    </li>
+    <!-- HEALTH TAB IS ACTIVE -->
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="health.html">Health</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="nutrition.html">Nutrition</a>
+    </li>
+  </ul>
   <!-- Tab end -->
 
-<!-- Carol's code for dropdown menu -->  
-    <!-- <div>
-        <button id="main" type="submit" class="btn btn-default">Main</button>
-    </div>
-    <div>
+  <div class="container">
 
-    <div>
-      <button id="activity" type="submit" class="btn btn-default">Inactivity</button>
-    </div>
-    <form name="nutritiondropdownList">
-        <button id="nutr" type="submit" class="btn btn-default" onchange="optionChanged(this.value)">Nutrition</button>
-        <select id="nutr" onchange="optionChanged(this.value)">
-          <option value="soda">Soda</option>
-          <option value="fruit">Eats No Fruits</option>
-          <option value="vegetable">Eats No Vegetables</option>
-        </select>
-      </form>
-    </div> -->
+    <br>
+    <br>
+    <h2>Health Data</h2>
+    <p>The chart shows that STATE NAME has the highest reported percentage of inactivity at ____%, while STATENAME has
+      lowest percentage of inactivity among adults. According to the Behavioral Risk Factor Surveillance System (BRFSS)
+      data, adults who are physically inactive are those who did not engage in physical activity or exercise during the
+      previous 30 days other than for their regular job. </p>
 
 
-<div class="container">
+    <br>
+    <br>
 
-    <!-- <div id="map"></div> -->
-      <br>
-      <br>
-      <h2>Health Data</h2>
-      <p>The chart shows that STATE NAME has the highest reported percentage of inactivity at ____%, while STATENAME has lowest percentage of inactivity among adults. According to the  Behavioral Risk Factor Surveillance System (BRFSS) data, adults who are physically inactive are those who did not engage in physical activity or exercise during the previous 30 days other than for their regular job. </p>
-
-
-      <br>
-      <br>
-
-      <div id="map"></div>
-      <caption>
-          Map: State with Diabetes (from Monica's data) [Bic]
-          </caption>
-      <br>
-      <br>
-      <br>
-      <div id="chart1" class="chart" style="padding:0%;"></div>
-      <caption>
-          Chart: Percentage Rate of Exercise Data [Carol]
-          </caption>
+    <div id="map"></div>
+    <caption>
+      Map: State with Diabetes (from Monica's data) [Bic]
+    </caption>
+    <br>
+    <br>
+    <br>
+    <div id="chart1" class="chart" style="padding:0%;"></div>
+    <!-- <caption>
+      Chart: Percentage Rate of Inactivity
+    </caption> -->
   </div>
 
- 
   <!-- Link to Obesity Map JS -->
   <script type="text/javascript" src="../static/js/Map_Health/config.js"></script>
   <script type="text/javascript" src="../static/js/Map_Health/geojson_health.js"></script>
   <script type="text/javascript" src="../static/js/Map_Health/logic_map_health.js"></script>
-  
-  <!-- Link to Obesity Chart JS -->
-  <!-- <script type="text/javascript" src="../static/js/Chart_AgeGender/GenderAge.js"></script> -->
-  <!-- <script type="text/javascript" src="../static/data/data_AgeGender.js"></script> -->
-  <!-- <script type="text/javascript" src="../static/js/app_obesity.js"></script> -->
 
-  <!-- Nutrition Data -->
-  <!-- <script src="data_Male_Nutrition.js"></script> -->
-  <!-- <script src="data_Female_Nutrition.js"></script> -->
-
-  <!-- Nutrition Plotly Charts -->
-  <!-- <script src="Soda_Intake.js"></script> -->
-  <!-- <script src="Fruit_Intake.js"></script> -->
-  <!-- <script src="Vegetable_Intake.js"></script> -->
-  <script type="text/javascript" src="../static/js/app_health.js"></script>
+  <!-- Data for Health Chart -->
   <script src="../static/data/data_Health.js"></script>
 
+  <!-- Health Chart -->
+  <script src="../static/js/Chart_Health/Inactivity_Interactive.js"></script>
+
+  <!-- <script type="text/javascript" src="../static/js/app_health.js"></script> -->
 
 </body>
 
 <footer>
-    <p style="font-size:.75em; color:#808080; text-align: center">Design & Developed by Carol Fogel, Monica L. and Bic Vu, 2019.</p>
-    <br>
+  <p style="font-size:.75em; color:#808080; text-align: center">Design & Developed by Carol Fogel, Monica L. and Bic Vu,
+    2019.</p>
+  <br>
 </footer>
 
 </html>

@@ -1,12 +1,12 @@
 /* Connections to divs and style overrides */
 
 /* Custome font overriding bootstrap style */
-@font-face {
+/* @font-face {
 	/* src: url("https://use.typekit.net/fwf7daa.css"); */
-	font-family: "Aglet Slab";
+	/*font-family: "Aglet Slab";
 	font-weight: 400;
   	font-style: normal;
-}
+} */
 
 * {
 	font-family: inherit;
