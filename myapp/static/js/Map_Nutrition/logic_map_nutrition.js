@@ -6,13 +6,13 @@ var $div = d3
 
 // Indigo gradient
 function getColor(d) {
-    return d > 38 ? '#283593' :
-           d > 36  ? '#303f9f' :
-           d > 32  ? '#3949ab' :
-           d > 30  ? '#3f51b5' :
-           d > 28   ? '#5c6bc0' :
-           d > 26   ? '#7986cb' :
-           d > 24   ? '#c5cae9' :
+    return d > 35 ? '#283593' :
+           d > 30  ? '#303f9f' :
+           d > 25  ? '#3949ab' :
+           d > 20  ? '#3f51b5' :
+           d > 15   ? '#5c6bc0' :
+           d > 10   ? '#7986cb' :
+           d > 5   ? '#c5cae9' :
                       '#e8eaf6';
 }
 
@@ -100,7 +100,7 @@ function highlightFeature(e) {
   legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [24, 26, 28, 30, 32, 34, 36, 38],
+        grades = [35, 30, 25, 20, 15, 10, 5],
         labels = [];
 
     // loop through our density intervals and generate a label with a colored square for each interval
