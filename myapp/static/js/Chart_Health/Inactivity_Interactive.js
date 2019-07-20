@@ -124,10 +124,10 @@ function makeResponsive() {
     dots
         .append("circle")
         .attr("class", "dot")
-        .attr("r", 15)
+        .attr("r", 20)
         .attr("cx", xMap)
         .attr("cy", yMap)
-        .style("fill", "blue")
+        .style("fill", "#5df2d6")
 
     dots
         .append("text")
