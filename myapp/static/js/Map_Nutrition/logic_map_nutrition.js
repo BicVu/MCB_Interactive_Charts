@@ -6,14 +6,14 @@ var $div = d3
 
 // Indigo gradient
 function getColor(d) {
-    return d > 35 ? '#283593' :
-           d > 30  ? '#303f9f' :
-           d > 25  ? '#3949ab' :
-           d > 20  ? '#3f51b5' :
-           d > 15   ? '#5c6bc0' :
-           d > 10   ? '#7986cb' :
-           d > 5   ? '#c5cae9' :
-                      '#e8eaf6';
+    return d > 35 ? '#c62828':
+            d > 30 ? '#d32f2f':
+            d > 25 ? '#e53935':
+            d > 20 ? '#f44336':
+            d > 15 ? '#ef5350':
+            d > 10 ? '#e57373':
+            d > 5 ? '#ef9a9a':
+                '#ffcdd2';
 }
 
 function addMap() {
@@ -89,32 +89,32 @@ function highlightFeature(e) {
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
       this._div.innerHTML = '<h5>Vending Machines in Schools</h5>' +  (props ?
-          '<b>' + props.name + '</b><br />' + props.density + '% obesity population'
+          '<b>' + props.name + '</b><br />' + props.density + '% HS allows vending machine'
           : 'Hover over a state');
   };
 
   info.addTo(map);
 
-  var legend = L.control({position: 'bottomright'});
+  // var legend = L.control({position: 'bottomright'});
 
-  legend.onAdd = function (map) {
+  // legend.onAdd = function (map) {
 
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [35, 30, 25, 20, 15, 10, 5],
-        labels = [];
+  //   var div = L.DomUtil.create('div', 'info legend'),
+  //       grades = [35, 30, 25, 20, 15, 10, 5],
+  //       labels = [];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+  //   // loop through our density intervals and generate a label with a colored square for each interval
 
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
+  //   for (var i = 0; i < grades.length; i++) {
+  //       div.innerHTML +=
+  //           '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+  //           grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+  //   }
 
-    return div;
-  };
+  //   return div;
+  // };
 
-  legend.addTo(map);
+  // legend.addTo(map);
 
 
   // Add layer to map

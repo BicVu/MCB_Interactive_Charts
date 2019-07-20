@@ -43,8 +43,14 @@ function SodaIntake() {
             color: '#7f7f7f'
         },
         showlegend: true,
+        legend: {
+            xanchor: "left",
+            yanchor: "bottom",
+            x: 0.05,
+            y: -0.3
+          },
         height: 600,
-        width: 1500,
+        width: 1200,
    
         yaxis: {
             range: [12, 22],
@@ -108,8 +114,14 @@ function SodaIntake2() {
             color: '#7f7f7f'
         },
         showlegend: true,
+        legend: {
+            xanchor: "left",
+            yanchor: "bottom",
+            x: 0.05,
+            y: -0.3
+          },
         height: 600,
-        width: 1500,
+        width: 1200,
         yaxis: {
             range: [12, 22],
             title: '% Obesity',
@@ -187,8 +199,14 @@ function SodaIntake3() {
             color: '#7f7f7f'
         },
         showlegend: true,
+        legend: {
+            xanchor: "left",
+            yanchor: "bottom",
+            x: 0.05,
+            y: -0.3
+          },
         height: 600,
-        width: 1500,
+        width: 1200,
         yaxis: {
             title: '% Obesity',
             titlefont: {
